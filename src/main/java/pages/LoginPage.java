@@ -14,13 +14,17 @@ public class LoginPage extends BasePage {
     @FindBy(xpath = "//button[contains(text(),'Continue')]")
     private WebElement continueButton;
 
-    @FindBy(xpath = "//button[contains(text(),'Login')]")
-    private WebElement loginButton;
 
     public void loginWithPhoneNumber(String phoneNumber) {
-        shadowHelper.clickShadowElementByTextContent(SHADOW_HOST, loginButton);
+            shadowHelper.clickShadowElementByTextContent(SHADOW_HOST, "button", "Login");
             waitHelper.waitForElementVisible(phoneNumberField);
             phoneNumberField.sendKeys(phoneNumber);
             continueButton.click();
 
     }
+
+
+
+
+
+}
